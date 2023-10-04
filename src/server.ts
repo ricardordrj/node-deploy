@@ -20,6 +20,6 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => {
     return;
 });
 
-app.listen(port, "0.0.0.0", () => {
+app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);
 });
