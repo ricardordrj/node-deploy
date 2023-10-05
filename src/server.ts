@@ -1,15 +1,15 @@
-import express, { Request, Response, NextFunction } from "express";
-import bodyParser from "body-parser";
-import router from "./routes";
+import express, { Request, Response, NextFunction } from 'express';
+import bodyParser from 'body-parser';
+import router from './routes';
 const port = process.env.PORT || 3030;
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("public"));
+app.use(express.static('public'));
 
-app.use("/", router);
+app.use('/', router);
 
 /* Error handler middleware */
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
