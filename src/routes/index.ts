@@ -1,9 +1,10 @@
 import express from 'express';
-import homeController from '../controllers/homeController';
+import Home from './home';
+import Healthcheck from './healthCheck';
 
-const router = express.Router();
+const router = express();
 
-router.get('/', homeController.get);
-router.post('/', homeController.post);
+router.use('/', Home);
+router.use('/healthcheck', Healthcheck);
 
 export default router;
